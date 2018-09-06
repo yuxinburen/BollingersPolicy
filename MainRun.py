@@ -1,14 +1,11 @@
 # -*- coding: UTF-8 -*-
 
-# import sys
-# import os
-#
-# curPath = os.path.abspath(os.path.dirname(__file__))
-# rootPath = os.path.split(curPath)[0]
-# sys.path.append(rootPath)
-#
-# print(sys.path)
-# exit()
+import sys
+import os
+
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[1]
+sys.path.append(rootPath)
 
 from datetime import datetime, timedelta
 import pandas as pd
@@ -33,7 +30,7 @@ pd.set_option('expand_frame_repr', False)  # 当列太多时不换行
 """
 
 # =====参数
-time_interval = '1m'  # 间隔运行时间，不能低于5min
+time_interval = '15m'  # 间隔运行时间，不能低于5min
 
 exchange = ccxt.bitfinex()  # 创建交易所，此处为bitfinex交易所
 exchange.apiKey = 'mWXJVmeewzMVphHkd8JcXhZ3ZGsNWh3JLT8nAmDSwe0'  # 此处加上自己的apikey和secret，都需要开通交易权限
@@ -127,4 +124,4 @@ while True:
     print(email_title)
     print(email_content)
     print('=====本次运行完毕\n')
-    sleep(6 * 1)
+    sleep(60 * 1)
