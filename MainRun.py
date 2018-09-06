@@ -30,7 +30,7 @@ pd.set_option('expand_frame_repr', False)  # 当列太多时不换行
 """
 
 # =====参数
-time_interval = '15m'  # 间隔运行时间，不能低于5min
+time_interval = '1m'  # 间隔运行时间，不能低于5min
 
 exchange = ccxt.bitfinex()  # 创建交易所，此处为bitfinex交易所
 exchange.apiKey = 'mWXJVmeewzMVphHkd8JcXhZ3ZGsNWh3JLT8nAmDSwe0'  # 此处加上自己的apikey和secret，都需要开通交易权限
